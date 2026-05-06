@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Healthy's</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Healthy's Menu</h1>
+
+    <!-- MENÚ SUPERIOR -->
+    <nav class="tabs">
+        <button data-target="entrants" class="tab active">Entrants</button>
+        <button data-target="principals" class="tab">Principals</button>
+        <button data-target="begudes" class="tab">Begudes</button>
+        <button data-target="carret" class="tab">Carret</button>
+    </nav>
+
+    <div id="content">
+        <div id="entrants" class="section"></div>
+        <div id="principals" class="section hidden"></div>
+        <div id="begudes" class="section hidden"></div>
+        <div id="carret" class="section hidden section-carret">
+            <div class="carret-box">
+                <h2>Carret de la compra</h2>
+                <ul id="llista-carret">
+                    <li>Encara no has afegit cap producte.</li>
+                </ul>
+                <p class="carret-total">Total: <span id="carret-total">0</span>€</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+
+</html>

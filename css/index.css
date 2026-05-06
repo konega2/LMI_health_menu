@@ -1,0 +1,249 @@
+html {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.grid-item-card {
+  /* Equivalent a Card(elevation: 4) + clipBehavior + Column */
+  border-radius: 12px;
+  overflow: hidden;
+  /* “clip” de les vores */
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* útil si està dins d’un grid */
+  max-width: 400px;
+}
+
+/* Imatge (Flexible flex: 8) */
+.grid-item-image {
+  flex: 8;
+  min-height: 0;
+  /* important perquè flex no “rebente” */
+
+}
+
+.grid-item-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  /* BoxFit.cover */
+}
+
+/* Nom (Flexible flex: 3) */
+.grid-item-info {
+  flex: 3;
+  padding: 10px 12px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow: visible;
+}
+
+
+
+.grid-item-info {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.grid-item-header {
+  display: flex;
+  align-items: baseline;
+  /* millor que center per títol + preu */
+  gap: 10px;
+}
+
+.grid-item-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  flex: 1;
+  /* ocupa espai */
+  min-width: 0;
+  /* permet ellipsis */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-item-price {
+  margin-left: auto;
+  /* espenta cap a la dreta */
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.grid-item-desc {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.grid-item-meta {
+  font-size: 12px;
+  color: #666;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.grid-item-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #f2f2f2;
+}
+
+.tag-allergen {
+  background: #ffe9e9;
+}
+
+/* TABS PER AL MENÚ I LA VISIBILITAT */
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.tab:hover {
+  color: #000;
+}
+
+.tab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #1976d2;
+  /* blau Material */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tab.active {
+  color: #1976d2;
+}
+
+.tab.active::after {
+  transform: scaleX(1);
+}
+
+.tab {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 1rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.tabs button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.section.hidden {
+  display: none;
+}
+
+.section-carret {
+  grid-template-columns: 1fr;
+}
+
+.carret-box {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.add-cart-button {
+  border: none;
+  background: #1976d2;
+  color: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.add-cart-button:hover {
+  background: #145ca1;
+}
+
+.remove-cart-button {
+  border: none;
+  background: #c62828;
+  color: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.remove-cart-button:hover {
+  background: #9f1d1d;
+}
+
+.carret-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.carret-qty {
+  margin-left: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #444;
+}
+
+.carret h2 {
+  margin-top: 0;
+}
+
+.carret ul {
+  padding-left: 20px;
+}
+
+.carret-total {
+  font-weight: bold;
+}
